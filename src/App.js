@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import React,{useState,useEffect,useRef,useCallback} from "react";  
 
 const NAVY = "#003B7A", ORANGE = "#E8711A", GREEN = "#1A9E5A", RED = "#D94040", GOLD = "#F4A91D", BORDER = "#D4E4F4", TEXT = "#1A2533", MUTED = "#6B7A90", TARGET = 300;
 const CENTRE = "Annur Vision Centre";
