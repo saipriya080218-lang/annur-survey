@@ -1,4 +1,4 @@
-import React,{useState,useEffect,useRef,useCallback} from "react";  
+import React, { useState, useEffect, useRef, useCallback } from "react";
 
 const NAVY = "#003B7A", ORANGE = "#E8711A", GREEN = "#1A9E5A", RED = "#D94040", GOLD = "#F4A91D", BORDER = "#D4E4F4", TEXT = "#1A2533", MUTED = "#6B7A90", TARGET = 300;
 const CENTRE = "Annur Vision Centre";
@@ -6,7 +6,7 @@ const CENTRE = "Annur Vision Centre";
 /* ══════════════════════════════════════════════════════
    ALL 29 QUESTIONS — from Annur_VC_KoboToolbox_FIXED.xlsx
    ══════════════════════════════════════════════════════ */
- const QUESTIONS = [
+const QUESTIONS = [
   { n: 1, section: "Demographics", en: "Age Group", ta: "வயது பிரிவு", te: "వయసు సమూహం", hint_en: "Select the applicable age group", hint_ta: "பொருந்தும் வயது பிரிவை தேர்ந்தெடுக்கவும்", hint_te: "వర్తించే వయసు సమూహాన్ని ఎంచుకోండి", choices: [{ en: "<18 years", ta: "18 வயதுக்கு குறைவானவர்", te: "18 సంవత్సరాల లోపు" }, { en: "18–30 years", ta: "18–30 வயது", te: "18–30 సంవత్సరాలు" }, { en: "31–50 years", ta: "31–50 வயது", te: "31–50 సంవత్సరాలు" }, { en: ">50 years", ta: "50 வயதுக்கு மேல்", te: "50 సంవత్సరాలకు పైగా" }] },
   { n: 2, section: "Demographics", en: "Gender", ta: "பாலினம்", te: "లింగం", hint_en: "", hint_ta: "", hint_te: "", choices: [{ en: "Male", ta: "ஆண்", te: "పురుషుడు" }, { en: "Female", ta: "பெண்", te: "స్త్రీ" }, { en: "Other", ta: "மற்றவை", te: "ఇతర" }, { en: "Prefer not to disclose", ta: "தெரிவிக்க விரும்பவில்லை", te: "వెల్లడించడం ఇష్టం లేదు" }] },
   { n: 3, section: "Demographics", en: "Education", ta: "கல்வி தகுதி", te: "విద్యా అర్హత", hint_en: "Highest level completed", hint_ta: "முடித்த உயர்ந்த கல்வி நிலை", hint_te: "పూర్తి చేసిన అత్యధిక స్థాయి", choices: [{ en: "No formal education / Illiterate", ta: "முறையான கல்வி இல்லை", te: "అక్షరజ్ఞానం లేదు" }, { en: "Primary (up to Class 5)", ta: "ஆரம்ப கல்வி (வகுப்பு 5 வரை)", te: "ప్రాథమిక (5వ తరగతి వరకు)" }, { en: "Secondary (Classes 6–10)", ta: "இடைநிலை (வகுப்பு 6–10)", te: "మాధ్యమిక (6–10 తరగతి)" }, { en: "Higher Secondary / Diploma", ta: "மேல்நிலை / டிப்லோமா", te: "హయ్యర్ సెకండరీ / డిప్లొమా" }, { en: "Graduate & above", ta: "பட்டதாரி மற்றும் அதற்கு மேல்", te: "పట్టభద్రుడు & అంతకు పైగా" }] },
