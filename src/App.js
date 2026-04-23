@@ -1,4 +1,3 @@
-//
 import React, { useState } from 'react';
 
 const questions = [
@@ -86,21 +85,3 @@ function App() {
 }
 
 export default App;
-// inside your App function
-const [currentStep, setCurrentStep] = useState(0);
-
-const handleNext = () => {
-  if (currentStep < QUESTIONS.length - 1) {
-    setCurrentStep(currentStep + 1);
-  } else {
-    alert("Survey Complete! You can now print the summary.");
-  }
-};
-
-// Update your button at the bottom:
-<button
-  onClick={handleNext}
-  style={{ backgroundColor: NAVY, color: 'white', padding: '15px 30px', borderRadius: '8px', cursor: 'pointer' }}
->
-  Confirm & Next Question
-</button>
